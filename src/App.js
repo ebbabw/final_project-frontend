@@ -9,7 +9,7 @@ import { cart } from './reducers/cart'
 import { products } from './reducers/products'
 
 //components
-import { Cart } from './components/Cart'
+import { Cart } from './components/C'
 import { Products } from 'components/Products'
 
 const reducer = combineReducers({
