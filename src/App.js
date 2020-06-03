@@ -1,20 +1,31 @@
 import React from 'react'
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { quiz } from 'reducers/quiz'
 
-import { CurrentQuestion } from 'components/CurrentQuestion'
+//Redux tools
+import { Provider } from 'react-redux'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+
+//Redux store
+import { cart } from './reducers/cart'
+import { products } from './reducers/products'
+
+//components
+import { Cart } from './components/Cart'
+import { Products } from 'components/Products'
 
 const reducer = combineReducers({
-  quiz: quiz.reducer
+  cart: cart.reducer,
+  products: products.reducer
 })
 
 const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <CurrentQuestion />
-    </Provider>
+   <Provider store={store}>
+
+   <Cart />
+   <Products />
+
+   </Provider>
   )
 }
