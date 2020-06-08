@@ -1,7 +1,7 @@
 import React from 'react'
-import { products } from 'reducers/products'
+
 import { CartItem } from './CartItem'
-import { Product } from './Product'
+
 
 export const Cart = () => {
 
@@ -10,7 +10,7 @@ export const Cart = () => {
     return (
     
     <div>
-
+{/* 
     <span role="img" aria-label="cart">🛒</span>
     <p>Total: {totalPrice}</p>
 
@@ -19,7 +19,7 @@ export const Cart = () => {
             <CartItem key={Product.id} product={product} />
 
         ))}
-    </ul>
+    </ul> */}
 
     </div>
 

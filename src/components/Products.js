@@ -1,10 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { Product } from './Product'
 
 export const Products = () => {
 
 
-    const allProducts = []
+    const allProducts = useSelector((store) => store.products)
 
     return (
 
