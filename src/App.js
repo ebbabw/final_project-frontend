@@ -1,31 +1,66 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-//Redux tools
-import { Provider } from 'react-redux'
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+//pages 
+import { Home } from './pages/Home'
+import { Donate } from './pages/Donate'
 
-//Redux store
-import { cart } from './reducers/cart'
-import { products } from './reducers/products'
-
-//components
-import { Cart } from './components/Cart'
-import { Products } from 'components/Products'
-
-const reducer = combineReducers({
-  cart: cart.reducer,
-  products: products.reducer
-})
-
-const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-   <Provider store={store}>
+   <BrowserRouter>
+    <Switch>
 
-   <Cart />
-   <Products />
+    <Route path="/" exact>
+    <Home />
+    </Route>
 
-   </Provider>
+    <Route path="/donate" exact>
+    <Donate />
+    </Route>
+
+   </Switch>
+   </BrowserRouter>
   )
 }
+
+
+// import React from 'react'
+// import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
+// // components
+// import { SignUpform } from './components/SignUpform'
+// import { SignInform } from './components/SignInform'
+// import {  SecretMessage } from './components/SecretMessage'
+
+// // lib
+// import { Card } from './lib/Card'
+// import { Wrapper } from './lib/Wrapper'
+
+
+
+// export const App = () => {
+//   return (
+    
+//     <BrowserRouter>
+//     <Switch>
+//     <Card>
+//     <Wrapper>
+
+//     <Route path="/" exact>
+//            <SignUpform />
+//            <SignInform  /> 
+//     </Route>
+
+//     <Route path='/secretmessage'>
+//           <SecretMessage />
+//     </Route>
+
+//     </Wrapper>
+//     </Card>
+//     </Switch>
+//     </BrowserRouter>
+//   )
+// }
+
+
