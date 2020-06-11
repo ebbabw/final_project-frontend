@@ -52,7 +52,7 @@ const Ul = styled.p`
 const Li = styled.li`
     font-size: 18px;
     display: inline-block;
-    margin-top: 30px;
+    margin-top: 49px;
     margin-right: 100px;
     text-transform: uppercase;
     color: white;
