@@ -1,12 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-
+import overlaytexture from '../assets/texture.png'
 
 export const FullVideo = () => {
 
    return (
     <div>
+
+      <Texture></Texture>
      
       <VideoContiner>
       
@@ -29,8 +31,21 @@ export const FullVideo = () => {
    );
  };
 
- const VideoContiner = styled.div`
+ const Texture = styled.img`
 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top 0;
+  left: 0;
+  z-index: 15;
+  background-image: url(${overlaytexture});
+    
+`;
+
+ const VideoContiner = styled.div`
+   
+  
    height: 100vh;
    width: 100%;
    background-color: gray;

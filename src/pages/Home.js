@@ -24,7 +24,7 @@ export const Home = () => {
                <Li>Our Members</Li>
                <Logo src={require('../assets/logocwg.png')}></Logo>
                <Li>
-              <StyledLink to="/donate">Donate</StyledLink>
+               <StyledLink to="/donate">Donate</StyledLink>
                </Li>
                <Li>What we do</Li>
            </Ul>
@@ -46,7 +46,9 @@ export const Home = () => {
 const Ul = styled.p`
   display: flex;
   color: white;
+  width: 100%;
   justify-content: center;
+  margin-left: 42px;
 `;
 
 const Li = styled.li`
