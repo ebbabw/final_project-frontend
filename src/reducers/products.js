@@ -1,14 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { ui } from './ui'
 
-const productData = [
-
-   { id: 1, title: 'stuffed Wale animal', price: 49 },
-   { id: 2, title: 'Recyeld braslet', price: 149 },
-   { id: 3, title: 'Recyeld bag', price: 349 }
-
-]
 
 export const products = createSlice({
     name: 'products',
-    initialState: productData
+    initialState: {
+        product: []
+    },
+
+    reducers: {
+        setProduct: (state, action) => {
+            state.product = action.payload.products
+        }
+    }
 })
+
+export const fetchProducts = () => {
+    return(dispatch) => {
+        dispatch(ui.actions.setLoading(true))
+        fetch('https://ebba-final-project.herokuapp.com/products')
+        .then((res) => res.json())
+        .then((json)=> {
+          dispatch(products.actions.setProduct({products: json}))
+          console.log({products: json})
+          dispatch(ui.actions.setLoading(false))
+        })
+    }
+}
+
+

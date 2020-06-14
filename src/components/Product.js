@@ -12,7 +12,7 @@ export const Product = ({ product }) => {
         <div>
 
            <ShopCard>
-           <div>{product.title}</div>
+           <div>{product.name}</div>
            <div>{product.price}:-</div>
 
            <Button
