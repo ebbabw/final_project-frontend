@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro'
 
 import overlaytexture from '../assets/texture.png'
@@ -20,7 +21,10 @@ export const FullVideo = () => {
         <CaptionContiner>
           
           <h1>Help us save our oceans</h1>
+          
+          <Link to="/memberform">
           <Button>Become a member</Button>
+          </Link>
           
           </CaptionContiner >
 
@@ -61,7 +65,7 @@ export const FullVideo = () => {
     z-index: 10;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); 
+    background: rgba(0, 0, 0, 0.3); 
    }
 `;
 

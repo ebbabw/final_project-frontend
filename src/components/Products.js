@@ -46,7 +46,7 @@ export const Products = () => {
 const ShopContainer = styled.div`
   
   display: flex;
-  margin-top: 180px;
+  margin-top: 100px;
   
 `;
 

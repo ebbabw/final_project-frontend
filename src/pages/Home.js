@@ -22,7 +22,9 @@ export const Home = () => {
            <Ul>
                <Li>Home</Li>
                <Li>Our Members</Li>
-               <Logo src={require('../assets/logocwg.png')}></Logo>
+
+                <Logo src={require('../assets/logocwg.png')}></Logo>
+
                <Li>
                <StyledLink to="/donate">Donate</StyledLink>
                </Li>
@@ -52,7 +54,7 @@ const Ul = styled.p`
 const Li = styled.li`
     font-size: 18px;
     display: inline-block;
-    margin-top: 49px;
+    margin-top: 15px;
     margin-right: 100px;
     text-transform: uppercase;
     color: white;

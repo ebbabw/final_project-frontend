@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 //pages 
 import { Home } from './pages/Home'
 import { Donate } from './pages/Donate'
+import { MemberForm } from './pages/MemberForm'
 
 
 
@@ -19,6 +20,10 @@ export const App = () => {
 
     <Route path="/donate" exact>
     <Donate />
+    </Route>
+
+    <Route path="/memberform" exact>
+    <MemberForm />
     </Route>
 
    </Switch>

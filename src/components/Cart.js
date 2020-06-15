@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { CartItem } from './CartItem'
 
 //lib
-import { ShopHeader } from '../lib/Header'
+import { Header } from '../lib/Header'
 
 
 export const Cart = () => {
@@ -14,7 +14,7 @@ export const Cart = () => {
 
     return (
     
-    <ShopHeader>
+    <Header>
  
     <span role="img" aria-label="cart">🛒</span>
     <div>Total: {totalPrice}:-</div>
@@ -26,7 +26,7 @@ export const Cart = () => {
         ))}
     </ul> 
 
-    </ShopHeader>
+    </Header>
 
     )
 }
