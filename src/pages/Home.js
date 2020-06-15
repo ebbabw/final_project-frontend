@@ -32,8 +32,6 @@ export const Home = () => {
        </Header>
 
        <FullVideo />
-
-       <div></div>
        
     </div>
 
@@ -60,7 +58,6 @@ const Li = styled.li`
     color: white;
     font-family: 'Roboto', sans-serif;
 `;
-
 
 
 const StyledLink = styled(Link)`

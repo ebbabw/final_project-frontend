@@ -14,6 +14,7 @@ export const Product = ({ product }) => {
            <ShopCard>
            <div>{product.name}</div>
            <div>{product.price}:-</div>
+           <div>{product.description}:-</div>
 
            <Button
 

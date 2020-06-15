@@ -22,7 +22,6 @@ export const fetchProducts = () => {
         .then((res) => res.json())
         .then((json)=> {
           dispatch(products.actions.setProduct({products: json}))
-          console.log({products: json})
           dispatch(ui.actions.setLoading(false))
         })
     }

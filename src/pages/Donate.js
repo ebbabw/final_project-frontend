@@ -12,6 +12,7 @@ import { ui } from '../reducers/ui'
 //components
 import { Cart } from '../components/Cart'
 import { Products } from '../components/Products'
+import { LoadingSpinner } from '../components/LoadingSpinner'
 
 const reducer = combineReducers({
   ui: ui.reducer,
@@ -24,7 +25,8 @@ const store = configureStore({ reducer })
 export const Donate = () => {
   return (
    <Provider store={store}>
-
+  
+   <LoadingSpinner />
    <Cart />
    <Products />
    
