@@ -5,6 +5,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { Donate } from './pages/Donate'
 import { MemberForm } from './pages/MemberForm'
+import { ProfilePage } from './pages/ProfilePage'
+import { About } from './pages/About'
 
 
 
@@ -24,6 +26,14 @@ export const App = () => {
 
     <Route path="/memberform" exact>
     <MemberForm />
+    </Route>
+
+    <Route path="/profilepage" exact>
+    <ProfilePage /> 
+    </Route>
+
+    <Route path="/whatwedo" exact>
+    <About /> 
     </Route>
 
    </Switch>

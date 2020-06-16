@@ -48,10 +48,9 @@ export const FullVideo = () => {
 `;
 
  const VideoContiner = styled.div`
-   
   
-   height: 100vh;
    width: 100%;
+   height: 100vh;
    background-color: gray;
    display: flex;
    align-items: center;
@@ -83,20 +82,31 @@ const Video = styled.video`
 
 const CaptionContiner = styled.div`
 
-   position: relative;
-   z-index: 20;
-   text-align: center;
-   color: #ffffff;
+  position: relative;
+  z-index: 20;
+  text-align: center;
+  color: #ffffff;
    
   
 `;
 
 const Button = styled.button`
 
-   position: relative;
-   z-index: 20;
+  width: 50%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.54);
+  border-radius: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.73);
+  color: white;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+
+    cursor: pointer;
+    transform: scale(1.1);
+
+  }
    
-  
 `;
 
 

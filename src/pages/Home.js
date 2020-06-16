@@ -6,9 +6,10 @@ import styled from 'styled-components/macro'
 //lib
 import { Header } from 'lib/Header'
 import { Logo } from 'lib/Logo'
+import { Container } from 'lib/Container'
 
 //components
-import { FullVideo } from '../components/FullVideo'
+import { FullVideo } from '../components/Fullvideo'
 
 export const Home = () => {
    
@@ -28,12 +29,17 @@ export const Home = () => {
                <Li>
                <StyledLink to="/donate">Donate</StyledLink>
                </Li>
-               <Li>What we do</Li>
+               
+               <Li>
+               <StyledLink to="/whatwedo">What we do</StyledLink>
+               </Li>
            </Ul>
        
        </Header>
 
        <FullVideo />
+
+       <Container />
        
     </div>
 
