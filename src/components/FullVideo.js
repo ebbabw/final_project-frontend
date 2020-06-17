@@ -86,24 +86,30 @@ const CaptionContiner = styled.div`
   z-index: 20;
   text-align: center;
   color: #ffffff;
+  text-transform: uppercase;
+  font-size: 20px;
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
    
   
 `;
 
 const Button = styled.button`
 
-  width: 50%;
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.54);
-  border-radius: 25px;
-  border: 1px solid rgba(0, 0, 0, 0.73);
+  width: 40%;
+  padding: 20px;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255);
   color: white;
   transition: all .2s ease-in-out;
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
   &:hover {
 
     cursor: pointer;
     transform: scale(1.1);
+    background-color: rgba(242, 192, 126);
 
   }
    

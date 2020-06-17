@@ -23,11 +23,14 @@ export const LoadingSpinner = () => {
       <>
        <LoadingIcon> 
         {isLoading && (
+        <div>
         <Lottie 
         options={defaultOptions} 
         height={400} 
         width={400}
         />
+         <p>Loading products....</p>
+        </div>
        )}
        </LoadingIcon>
 

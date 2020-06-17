@@ -12,14 +12,14 @@ export const Product = ({ product }) => {
         <div>
 
            <ShopCard>
-           <div>{product.name}</div>
-           <div>{product.price}:-</div>
-           <div>{product.description}:-</div>
+           <img src={product.image} alt={product.name}/>
+           <Title>{product.name}</Title>
+           <Pricetitle>{product.price}$</Pricetitle>
+           <Subtitle>{product.description}</Subtitle>
 
            <Button
 
            type="button"
-           disabled={product.inventory === 0}
            onClick={() => dispatch(cart.actions.addItem(product))}>
            Add to cart
            </Button>
@@ -36,16 +36,45 @@ export const Product = ({ product }) => {
 const ShopCard = styled.div`
   
   display: flex;
+  flex-direction: column;
   width: 400px;
   height: 400px;
-  background-color: lightblue;
   margin-left: 20px; 
   margin-bottom: 20px; 
 
 `;
 
-const Button = styled.button`
+const Title = styled.h1`
 
-  width: 80px;
+   font-size: 25px;
+   width: 100%;
+   height: 100px;
+   text-align: center;
+
+`
+
+const Pricetitle = styled.h1`
+
+   font-size: 20px;
+   margin-botton: 10px;
+   margin-left: 10px;
+
+`
+
+const Subtitle = styled.h1`
+
+   font-size: 15px;
+   width: 90%;
+   height: 200px;
+   margin-botton: 15px;
+   margin-left: 10px;
+
+`
+
+
+const Button = styled.button`
+  width: 90px;
   height: 40px;
+  margin-left: 10px;
+  margin-botton. 10px;
 `;
