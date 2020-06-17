@@ -14,6 +14,9 @@ import { Cart } from '../components/Cart'
 import { Products } from '../components/Products'
 import { LoadingSpinner } from '../components/LoadingSpinner'
 
+//lib
+import { Header } from '../lib/Header'
+
 const reducer = combineReducers({
   ui: ui.reducer,
   cart: cart.reducer,
@@ -26,6 +29,7 @@ export const Donate = () => {
   return (
    <Provider store={store}>
   
+   < Header />
    <LoadingSpinner />
    <Cart />
    <Products />

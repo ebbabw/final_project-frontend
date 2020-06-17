@@ -19,7 +19,7 @@ export const Header = () => {
 
                <Li>Our Members</Li>
 
-                <Logo src={require('../assets/logocwg.png')}></Logo>
+                <Logo src='/assets/logocwg.png'></Logo>
 
                <Li>
                <StyledLink to="/donate">Donate</StyledLink>

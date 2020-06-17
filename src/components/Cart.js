@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { CartItem } from './CartItem'
 import styled from 'styled-components/macro'
 
-//lib
-import { Header } from '../lib/Header'
-
-
 export const Cart = () => {
+  
+  const [showResults, setShowResults] = useState(false)
+  const onClick = () => setShowResults(true)
 
     const products = useSelector((store) => store.cart.items)
 
@@ -18,19 +17,22 @@ export const Cart = () => {
     return (
 
     <div>
-
-    < Header />
     
     <ShopContainer>
  
-    <Cartlogo src={require('../assets/shopping-bag.png')} alt="Cart"></Cartlogo>
+    <Cartlogo onClick={onClick} src='../assets/shopping-bag.png' alt="Cart"></Cartlogo>
     <Total>Total: {totalPrice}:-</Total>
 
+    { showResults ?
+    <CartContiner>
     <ul>
         {products.map((product) => (
-            <CartItem key={product.name} product={product} />
+            <CartItem key={product._id} product={product} />
         ))}
-    </ul> 
+    </ul>
+
+    </CartContiner>
+    : null }
 
     </ShopContainer>
 
@@ -43,18 +45,27 @@ export const Cart = () => {
 export const ShopContainer = styled.div`
   
   display: flex;
-  flex-direction: row;
+  justify-content: flex-end;
   margin-top: 80px;
-  width: 100%;
   height: 100px;
   background-color: lightblue;
 
 `;
 
+export const CartContiner = styled.div`
+  
+  display: flex;
+  z-index: 44;
+  width: 200px;
+  background-color: white;
+
+`;
+
 export const Cartlogo = styled.img`
+
   
   margin-top: 30px;
-  margin-left: 30px;
+  margin-right: 20px;
   width: 30px;
   height: 30px;
 
@@ -63,7 +74,7 @@ export const Cartlogo = styled.img`
 export const Total = styled.p`
   
   margin-top: 38px;
-  margin-left: 10px;
+  margin-right: 40px;
 
 `;
 

@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro'
 
-import overlaytexture from '../assets/texture.png'
 
 export const FullVideo = () => {
 
@@ -14,7 +13,7 @@ export const FullVideo = () => {
       <VideoContiner>
       
       <Video autoPlay playsInline muted loop>
-      <source src={require('../assets/ocean.mp4')} type="video/mp4" />
+      <source src='/assets/ocean.mp4' type="video/mp4" />
       </Video>
 
       
@@ -43,7 +42,7 @@ export const FullVideo = () => {
   top 0;
   left: 0;
   z-index: 15;
-  background-image: url(${overlaytexture});
+  background-image: url('/assets/texture.png');
     
 `;
 
