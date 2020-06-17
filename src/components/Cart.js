@@ -4,9 +4,6 @@ import { CartItem } from './CartItem'
 import styled from 'styled-components/macro'
 
 export const Cart = () => {
-  
-  const [showResults, setShowResults] = useState(false)
-  const onClick = () => setShowResults(true)
 
     const products = useSelector((store) => store.cart.items)
 
@@ -17,13 +14,16 @@ export const Cart = () => {
     return (
 
     <div>
+
+    <HeaderContainer>
+    <ShopHeader>Our products</ShopHeader>
+    </HeaderContainer>
     
     <ShopContainer>
- 
-    <Cartlogo onClick={onClick} src='../assets/shopping-bag.png' alt="Cart"></Cartlogo>
+
     <Total>Total: {totalPrice}:-</Total>
 
-    { showResults ?
+  
     <CartContiner>
     <ul>
         {products.map((product) => (
@@ -32,7 +32,6 @@ export const Cart = () => {
     </ul>
 
     </CartContiner>
-    : null }
 
     </ShopContainer>
 
@@ -41,35 +40,38 @@ export const Cart = () => {
     )
 }
 
+export const HeaderContainer = styled.div`
+  
+  display: flex;
+  margin-top: 100px;
+  justify-content: center;
+
+`;
+
+export const ShopHeader = styled.h1`
+  
+  font-size: 25px;
+
+`;
+
 
 export const ShopContainer = styled.div`
   
   display: flex;
   justify-content: flex-end;
-  margin-top: 80px;
+  margin-top: 10px;
   height: 100px;
-  background-color: lightblue;
 
 `;
 
 export const CartContiner = styled.div`
   
-  display: flex;
   z-index: 44;
   width: 200px;
   background-color: white;
 
 `;
 
-export const Cartlogo = styled.img`
-
-  
-  margin-top: 30px;
-  margin-right: 20px;
-  width: 30px;
-  height: 30px;
-
-`;
 
 export const Total = styled.p`
   

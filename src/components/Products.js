@@ -23,6 +23,7 @@ export const Products = () => {
 
       <div>
 
+
         <ShopContainer>
         <ShopWapper>
 
@@ -48,7 +49,6 @@ const ShopContainer = styled.div`
   
   display: flex;
   width: 100%;
-  margin-top: 100px;
   
 `;
 

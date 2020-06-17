@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro'
 
-import { Logo } from './Logo'
+import { Logo } from './Logos'
+import { LogoCart } from './Logos'
 
 export const Header = () => {
 
@@ -11,15 +12,15 @@ export const Header = () => {
 
       <HeaderContainer>
 
+            <Headerwrapper>
+            
 
-            <Ul>
+              <Link to="/"><Logo src='/assets/logocwg.png'></Logo></Link>
+             
+
                <Li>
                <StyledLink to="/">Home</StyledLink>
                </Li>
-
-               <Li>Our Members</Li>
-
-                <Logo src='/assets/logocwg.png'></Logo>
 
                <Li>
                <StyledLink to="/donate">Donate</StyledLink>
@@ -28,8 +29,15 @@ export const Header = () => {
                <Li>
                <StyledLink to="/whatwedo">What we do</StyledLink>
                </Li>
-           </Ul>
 
+               <Li>Our Members</Li>
+
+
+              <Li>
+              <LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart>
+              </Li>
+
+              </Headerwrapper>
 
      </HeaderContainer>
    
@@ -41,31 +49,32 @@ export const Header = () => {
 
 export const HeaderContainer = styled.div`
   width: 100%;
-  height: 80px;
+  height: 75px;
   position: fixed;
   background-color: black;
+  justify-content: center;
+  align-items: center;
   top: 0;
   z-index: 1000;
 
 `;
 
-
-const Ul = styled.p`
+export const Headerwrapper = styled.div`
+  
   display: flex;
   color: white;
   width: 100%;
   justify-content: center;
-  margin-left: 42px;
+
 `;
 
-const Li = styled.li`
-    font-size: 18px;
+const Li = styled.div`
+
     display: inline-block;
-    margin-top: 15px;
-    margin-right: 100px;
-    text-transform: uppercase;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+    margin-right: 80px;
+    font-size: 20px;
+    margin-top: 20px;
+
 `;
 
 

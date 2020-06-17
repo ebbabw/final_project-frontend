@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { cart } from '../reducers/cart'
+import { Link } from 'react-router-dom';
 
 import styled from 'styled-components/macro'
 
@@ -11,6 +12,7 @@ export const Product = ({ product }) => {
 
         <div>
 
+          <ProductLink key={product._id} to={`/product/${product._id}`}>
            <ShopCard>
             
            <Img src={product.image} alt={product.name}/>
@@ -19,14 +21,18 @@ export const Product = ({ product }) => {
            <Pricetitle>{product.price}$</Pricetitle>
            <Subtitle>{product.description}</Subtitle>
 
-           <Button
-           
+          
+
+           </ShopCard>
+           </ProductLink>
+
+           <ButtonContainer>
+           <button
            type="button"
            onClick={() => dispatch(cart.actions.addItem(product))}>
            Add to cart
-           </Button>
-
-           </ShopCard>
+           </button>
+           </ButtonContainer>
 
         </div>
 
@@ -34,6 +40,12 @@ export const Product = ({ product }) => {
 
 }
 
+const ProductLink = styled(Link)`
+    
+    text-decoration: none;
+    color: black;
+
+`;
 
 const ShopCard = styled.div`
   
@@ -44,15 +56,27 @@ const ShopCard = styled.div`
   height: 550px;
   margin-left: 20px; 
   margin-bottom: 20px; 
-  background-color: orange;
 
 `;
 
-
-const Img= styled.img`
+const Img = styled.img`
   width: 380px;
   height: 350px;
+
 `;
+
+const ButtonContainer = styled.div`
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  height: 60px;
+  margin-left: 20px; 
+  margin-bottom: 20px;
+
+`;
+
 
 const Title = styled.h1`
 
@@ -80,14 +104,5 @@ const Subtitle = styled.h1`
    margin-left: 10px;
 
 `
-
-
-const Button = styled.button`
-  width: 80px;
-  height: 40px;
-  margin-left: 10px;
-  margin-botton. 10px;
-`;
-
 
 
