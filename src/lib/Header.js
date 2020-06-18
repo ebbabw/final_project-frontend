@@ -34,7 +34,7 @@ export const Header = () => {
 
 
               <Li>
-              <LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart>
+                <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
               </Li>
 
               </Headerwrapper>

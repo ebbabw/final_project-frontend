@@ -29,7 +29,7 @@ export const Donate = () => {
   return (
    <Provider store={store}>
   
-   < Header />
+   <Header />
    <LoadingSpinner />
    <Cart />
    <Products />

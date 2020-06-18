@@ -2,8 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro'
 
+import { Button } from '../lib/Button'
 
-export const FullVideo = () => {
+
+export const FullVideo = props => {
 
    return (
     <div>
@@ -22,7 +24,7 @@ export const FullVideo = () => {
           <h1>Help us save our oceans</h1>
           
           <Link to="/memberform">
-          <Button>Become a member</Button>
+          <OutlinedButton>{props.buttonMessage}</OutlinedButton>
           </Link>
           
           </CaptionContiner >
@@ -92,26 +94,15 @@ const CaptionContiner = styled.div`
   
 `;
 
-const Button = styled.button`
-
-  width: 40%;
-  padding: 20px;
-  margin-top: 20px;
-  font-size: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255);
-  color: white;
-  transition: all .2s ease-in-out;
-  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+const OutlinedButton = styled(Button)`
+  width: 200px;
+  color: #6200ee;
+  background: ${props => props.background || "white"};
+  border: 2px solid #6200ee;
 
   &:hover {
-
-    cursor: pointer;
-    transform: scale(1.1);
-    background-color: rgba(242, 192, 126);
-
+    background: ${props => props.background || "#f5eeff"};
   }
-   
 `;
 
 

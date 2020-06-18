@@ -16,7 +16,11 @@ export const Home = () => {
 
        <Header /> 
 
-       <FullVideo />
+       <FullVideo 
+
+       buttonMessage="Become a Member"
+
+       />
 
        
     </div>
