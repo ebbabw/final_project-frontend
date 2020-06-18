@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { CartItem } from './CartItem'
+import { CartItem } from '../components/CartItem'
 import styled from 'styled-components/macro'
+import { Header } from '../lib/Header'
 
 export const Cart = () => {
 
@@ -15,25 +16,34 @@ export const Cart = () => {
 
     <div>
 
+    <Header />
+
     <HeaderContainer>
-    <ShopHeader>Our products</ShopHeader>
+    <ShopHeader>Shopping cart</ShopHeader>
     </HeaderContainer>
     
-    <ShopContainer>
 
-    <Total>Total: {totalPrice}:-</Total>
 
+    {/* {totalPrice.length === 0 && (
+      <p>No itmes in the cart</p>
+    )}  */}
+
+    {/* if totalprice === 0 retun text (no items in the cart and remove if price) */}
   
-    <CartContiner>
+    <ItemContainer>
+  
+    
     <ul>
+
         {products.map((product) => (
             <CartItem key={product._id} product={product} />
         ))}
+
     </ul>
 
-    </CartContiner>
+    </ItemContainer>
 
-    </ShopContainer>
+    <Total>Total: {totalPrice}:-</Total>
 
     </div>
 
@@ -45,6 +55,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   margin-top: 100px;
   justify-content: center;
+  background-color: yellow;
 
 `;
 
@@ -54,29 +65,17 @@ export const ShopHeader = styled.h1`
 
 `;
 
-
-export const ShopContainer = styled.div`
-  
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-  height: 100px;
+const ItemContainer = styled.div`
+   
+    text-align: center;
+    background-color: orange;
+    width: 100%;
 
 `;
-
-export const CartContiner = styled.div`
-  
-  z-index: 44;
-  width: 200px;
-  background-color: white;
-
-`;
-
 
 export const Total = styled.p`
   
   margin-top: 38px;
-  margin-right: 40px;
 
 `;
 

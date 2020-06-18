@@ -2,8 +2,12 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components/macro'
 
 //components
-import { Product } from './Product'
+import { Product } from '../components/Product'
 
+//lib
+import { Header } from '../lib/Header'
+
+//redux store
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchProducts } from '../reducers/products'
 
@@ -22,6 +26,8 @@ export const Products = () => {
     return (
 
       <div>
+
+        <Header />
 
 
         <ShopContainer>

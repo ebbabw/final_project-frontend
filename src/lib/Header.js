@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+
 import styled from 'styled-components/macro'
 
 import { Logo } from './Logos'
 import { LogoCart } from './Logos'
 
 export const Header = () => {
+
+  const totalPrice = useSelector((store) => (
+      store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+  ))
 
 
   return (
@@ -34,7 +40,8 @@ export const Header = () => {
 
 
               <Li>
-                <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
+              <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
+              <span>{totalPrice}:-</span>
               </Li>
 
               </Headerwrapper>

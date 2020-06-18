@@ -11,29 +11,27 @@ export const CartItem = ({ product }) => {
 
     return (
 
-        <Article>
+        <div>
+           
 
+            
+            <Img src={product.image} alt={product.name}/>
             <div>{product.name}</div>
             <span>x{product.quantity}</span>
-            <span>{product.price * product.quantity}:-</span>
+            <span>{product.price * product.quantity}$</span>
 
-            <button type="button" onClick={() => dispatch(cart.actions.addItem(product))}>+</button>
-            <button type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>-</button>
+            <button type="button" onClick={() => dispatch(cart.actions.addItem(product))}>add</button>
+            <button type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>remove</button>
+            
 
 
-        </Article>
+        </div>
+
     )
 }
 
-
-export const Article = styled.div`
-  
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  margin-top: 80px;
-  width: 200px;
-  background-color: white;
+const Img = styled.img`
+  width: 40px;
+  height: 40px;
 
 `;
-
