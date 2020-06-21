@@ -73,7 +73,7 @@ export const LogInForm = () => {
         >
         </FromInput>
   
-        <FromInput type="submit" value="Sign in"></FromInput>
+        <FromInput type="submit" value="Sign in" onClick={handleSubmit}></FromInput>
         {error && <p>{error}</p>}
         </FromWrapper>
         

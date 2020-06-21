@@ -89,6 +89,7 @@ export const SignUpForm = () => {
 
             <FromInput type="submit" value="Sign up" onClick={handleSubmit}></FromInput>
             {error && <p>{error}</p>}
+            
             </FromWrapper>
 
             </Form>

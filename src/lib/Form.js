@@ -42,7 +42,7 @@ Border: none;
 border-radius: 25px;
 padding: 20px;
 height: 3px;
-color: white;
+color: black;
 
 &::placeholder {
   font-style: italic;
