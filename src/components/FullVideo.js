@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components/macro'
 
 import { Button } from '../lib/Button'
+import { LogoHome } from '../lib/Logos'
 
 
 export const FullVideo = props => {
@@ -20,8 +21,10 @@ export const FullVideo = props => {
 
       
         <CaptionContiner>
-          
-          <h1>Help us save our oceans</h1>
+
+          <LogoHome src='/assets/logocwg.png'></LogoHome>
+
+          <h2>Help us save our oceans from plastic waste</h2>
           
           <Link to="/memberform">
           <OutlinedButton>{props.buttonMessage}</OutlinedButton>
@@ -35,6 +38,8 @@ export const FullVideo = props => {
       </div>
    );
  };
+
+
 
  const Texture = styled.img`
 
@@ -52,20 +57,21 @@ export const FullVideo = props => {
   
    width: 100%;
    height: 100vh;
-   background-color: gray;
+   background-color: black;
    display: flex;
    align-items: center;
    justify-content: center;
 
     &::after {
     width: 100%;
-    height 100%;
+    height 100vh;
     content:'';
     position: absolute;
     z-index: 10;
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.3); 
+    background-size: cover;
    }
 `;
 
@@ -96,12 +102,12 @@ const CaptionContiner = styled.div`
 
 const OutlinedButton = styled(Button)`
   width: 200px;
-  color: #6200ee;
+  color: black;
   background: ${props => props.background || "white"};
-  border: 2px solid #6200ee;
+  border: 2px solid black;
 
   &:hover {
-    background: ${props => props.background || "#f5eeff"};
+    background: ${props => props.background || "lightblue"};
   }
 `;
 

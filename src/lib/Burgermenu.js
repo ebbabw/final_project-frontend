@@ -4,16 +4,12 @@ import { useSelector } from 'react-redux'
 
 import styled from 'styled-components/macro'
 
-import { Logo } from './Logos'
 import { LogoCart } from './Logos'
 import { Logomenu } from './Logos'
 
-import { Burgermenu } from './Burgermenu'
+export const Burgermenu = () => {
 
-
-export const Header = () => {
-
-  const [showmenu, setShowmenu] = useState(false);
+  const [showmenu, setShowmenu] = useState(true);
 
   const totalPrice = useSelector((store) => (
       store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
@@ -22,18 +18,18 @@ export const Header = () => {
 
   return (
 
-
       <HeaderContainer>   
 
-            <Headerwrapper>
+            <Headermenu>
 
-            <LogoWrapperMenu>
+              <LogoWrapperMenu>
               <Logomenu src='/assets/menulogo.png' onClick={() => {setShowmenu(!showmenu)}}></Logomenu>
-            </LogoWrapperMenu>
-           
-             <LogoWrapper>
-              <Link to="/"><Logo src='/assets/logocwg.png'></Logo></Link>
-              </LogoWrapper>
+              </LogoWrapperMenu>
+
+            </Headermenu>  
+
+            {showmenu && 
+            <Headerwrapper>
 
                <Li>
                <StyledLink to="/">Home</StyledLink>
@@ -54,10 +50,7 @@ export const Header = () => {
               <span>{totalPrice}:-</span>
               </Li>
               </Headerwrapper>
-
-              {showmenu &&  <Burgermenu /> }
-
-
+              }
 
      </HeaderContainer>
    
@@ -67,63 +60,77 @@ export const Header = () => {
 }
 
 
+export const HeaderContainer = styled.div`
 
-const LogoWrapper = styled.div`
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 75px;
+    position: fixed;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+    background-color: black;
+  }
+`;
 
-    display: flex;
-    margin-left: 10%;
+
+export const Headermenu = styled.div`
+
+  background-color: black;
+  margin-left: 20px;
+
 
 `;
 
+
 const LogoWrapperMenu = styled.div`
 
- display: none;
+    display: none;
 
-@media (max-width: 768px) {
-  display: flex;
-
-
-}
-
-`
-
-export const HeaderContainer = styled.div`
-  width: 100%;
-  height: 75px;
-  position: fixed;
-  background-color: black;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  z-index: 1000;
+    @media (max-width: 768px) {
+      display:flex;
+      justify-content: flex-start;
+  }
 
 `;
 
 export const Headerwrapper = styled.div`
-  
-  display: flex;
-  color: white;
-  width: 100%;
-  justify-content: center;
+
+
+  @media (max-width: 768px) {
+    width: 250px;
+    height: 380px;
+    display: flex;
+    color: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.5s;
+    background-color: black;
+}
+
 `;
 
-const Li = styled.div`
-    display: inline-block;
-    margin-right: 80px;
-    font-size: 20px;
-    margin-top: 20px;
+const Li = styled.li`
 
     @media (max-width: 768px) {
-      display: none;
-    }
-`;
+      paddin-top: 30px;
+      margin-left: 20px;
+      margin-top: 20px;
+      display: flex;
+  }
 
+`;
 
 const StyledLink = styled(Link)`
     text-decoration: none;
     color: white;
+
     &:hover {
       background-color: lightblue;
     }
 `;
+
+
 

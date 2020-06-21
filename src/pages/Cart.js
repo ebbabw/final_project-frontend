@@ -30,18 +30,16 @@ export const Cart = () => {
 
     {/* if totalprice === 0 retun text (no items in the cart and remove if price) */}
   
-    <ItemContainer>
+    
   
     
-    <ul>
+    <div>
 
         {products.map((product) => (
             <CartItem key={product._id} product={product} />
         ))}
 
-    </ul>
-
-    </ItemContainer>
+    </div>
 
     <Total>Total: {totalPrice}:-</Total>
 
@@ -62,14 +60,6 @@ export const HeaderContainer = styled.div`
 export const ShopHeader = styled.h1`
   
   font-size: 25px;
-
-`;
-
-const ItemContainer = styled.div`
-   
-    text-align: center;
-    background-color: orange;
-    width: 100%;
 
 `;
 
