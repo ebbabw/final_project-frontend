@@ -19,6 +19,7 @@ import { About } from './pages/About'
 import { ProductDetails } from 'pages/ProductDetails'
 import { Cart } from './pages/Cart'
 import { Products } from './pages/Products'
+import { AllMembers } from './pages/AllMembers'
 
 //components
 import { LoadingSpinner } from './components/LoadingSpinner'
@@ -72,6 +73,11 @@ export const App = () => {
 
     <Route path="/whatwedo" exact>
     <About /> 
+    </Route>
+    
+
+    <Route path="/allmembers" exact>
+    <AllMembers />
     </Route>
 
    </Switch>

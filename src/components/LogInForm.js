@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
 
+import { Form, FromWrapper, FromHeader, FromInput} from '../lib/Form'
+
 export const LogInForm = () => {
   
     const [signInUser, setsignInUser] = useState({
@@ -47,19 +49,21 @@ export const LogInForm = () => {
 
       <article>
   
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
        
-        <h1>Sign in</h1>
+        <FromWrapper>
+        <FromHeader>Sign in</FromHeader>
   
-        <input
+        <FromInput
         type="email"
         placeholder="Email"
         required
         value={signInUser.email}
         onChange={event => setsignInUser({ ...signInUser, email: event.target.value })} 
         >
-        </input>
-        <input
+        </FromInput>
+        
+        <FromInput
         type="password"
         placeholder="Password"
         minlength="8"
@@ -67,11 +71,13 @@ export const LogInForm = () => {
         value={signInUser.password}
         onChange={event => setsignInUser({ ...signInUser, password: event.target.value })} 
         >
-        </input>
+        </FromInput>
   
-        <input type="submit" value="Sign in"></input>
+        <FromInput type="submit" value="Sign in"></FromInput>
         {error && <p>{error}</p>}
-        </form>
+        </FromWrapper>
+        
+        </Form>
    
       
   

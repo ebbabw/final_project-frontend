@@ -47,7 +47,9 @@ export const Header = () => {
                <StyledLink to="/whatwedo">What we do</StyledLink>
                </Li>
 
-               <Li>Our Members</Li>
+               <Li>
+               <StyledLink to="/allmembers">Our members</StyledLink>
+               </Li>
 
               <Li>
               <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>

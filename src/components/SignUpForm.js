@@ -1,5 +1,6 @@
 import React, { useState  } from 'react'
 
+import { Form, FromWrapper, FromHeader, FromInput} from '../lib/Form'
 
 export const SignUpForm = () => {
 
@@ -50,10 +51,12 @@ export const SignUpForm = () => {
 
           <div>
 
-            <form onSubmit={handleSubmit}>
-            <h1>Become a member</h1>
+            <Form onSubmit={handleSubmit}>
+            <FromWrapper>
             
-            <input
+            <FromHeader>Become a member</FromHeader>
+            
+            <FromInput
             type="text"
             placeholder="Name"
             required
@@ -61,9 +64,9 @@ export const SignUpForm = () => {
             onChange={event => setsignUpUser({ ...signUpUser, name: event.target.value })} 
             > 
   
-            </input>
+            </FromInput>
            
-            <input
+            <FromInput
             type="email"
             placeholder="Email"
             required
@@ -71,9 +74,9 @@ export const SignUpForm = () => {
             onChange={event => setsignUpUser({ ...signUpUser, email: event.target.value })} 
             >
   
-            </input>
+            </FromInput>
 
-            <input
+            <FromInput
             type="password"
             placeholder="Password"
             minlength="8"
@@ -82,12 +85,13 @@ export const SignUpForm = () => {
             onChange={event => setsignUpUser({ ...signUpUser, password: event.target.value })} 
             >
   
-            </input>
+            </FromInput>
 
-            <input type="submit" value="Sign up" onClick={handleSubmit}></input>
+            <FromInput type="submit" value="Sign up" onClick={handleSubmit}></FromInput>
             {error && <p>{error}</p>}
+            </FromWrapper>
 
-            </form>
+            </Form>
   
     
           </div>

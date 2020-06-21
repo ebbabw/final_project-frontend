@@ -55,6 +55,7 @@ const ShopContainer = styled.div`
   
   display: flex;
   width: 100%;
+  margin-top: 100px;
   
 `;
 
@@ -62,7 +63,7 @@ const ShopWapper = styled.div`
   
   display: flex;
   width: 100%;
-  height: 500px;
+  height: 400px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;

@@ -1,6 +1,10 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import styled from 'styled-components/macro'
+
+import { Header } from '../lib/Header'
+import { Button } from '../lib/Button'
 
 
 export const ProductDetails = () => {
@@ -22,10 +26,10 @@ export const ProductDetails = () => {
     
     return (
 
-        <article className="MoviePage">
-        <Link to="/donate">
-        <button>back to shop</button>
-        </Link>
+        <ProductContainer>
+
+        <Header />
+
         {product && (
 
             <div>
@@ -37,7 +41,16 @@ export const ProductDetails = () => {
             
         )}
 
-        </article>
+        <div>
+        <Link to="/donate">
+        <Button>back to shop</Button>
+        </Link>
+        </div>
+
+
+        </ProductContainer>
+
+
 
     
 
@@ -45,3 +58,13 @@ export const ProductDetails = () => {
 
 
  }
+
+ const ProductContainer = styled.div`
+  
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 100px;
+  
+`;
+
