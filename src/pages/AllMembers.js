@@ -6,8 +6,7 @@ import styled from 'styled-components/macro'
 import { Header } from '../lib/Header'
 
 
-
-export const MembersList = () => {
+export const AllMembers = () => {
     
     const [member, setmember] = useState([])
 
@@ -72,6 +71,5 @@ const Memberbox = styled.div`
    font-size: 20px;
    margin-left: 10px;
    text-align: center;
-
 
 `

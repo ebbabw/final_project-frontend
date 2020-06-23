@@ -48,7 +48,6 @@ export const About = () => {
   `;
   
 
-
  const FactsContainer = styled.div`
   
   display: flex;
