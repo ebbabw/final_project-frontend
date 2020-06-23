@@ -55,6 +55,7 @@ const MembersContainer = styled.div`
   
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width 100%;
   height: 300px;
   margin-top: 50px;

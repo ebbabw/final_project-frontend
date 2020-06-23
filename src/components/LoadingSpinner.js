@@ -48,7 +48,6 @@ const LoadingIcon = styled.div`
   position: absolute;
   padding: 1em;
   z-index: 60;
-  background-color: red;
 `
 
 
