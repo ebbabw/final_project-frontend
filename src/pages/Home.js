@@ -1,7 +1,7 @@
 import React from 'react'
 
 //components
-import { FullVideo } from '../components/Fullvideo'
+import { FullVideo } from '../components/FullVideo'
 
 //lib
 import { Header } from 'lib/Header'
