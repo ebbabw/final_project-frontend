@@ -7,7 +7,7 @@ import { Header } from '../lib/Header'
 
 
 
-export const AllMembers = () => {
+export const MembersList = () => {
     
     const [member, setmember] = useState([])
 

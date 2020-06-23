@@ -19,7 +19,7 @@ import { About } from './pages/About'
 import { ProductDetails } from 'pages/ProductDetails'
 import { Cart } from './pages/Cart'
 import { Products } from './pages/Products'
-import { AllMembers } from './pages/AllMembers'
+import { MembersList  } from './pages/MembersList'
 
 //components
 import { LoadingSpinner } from './components/LoadingSpinner'
@@ -74,10 +74,9 @@ export const App = () => {
     <Route path="/whatwedo" exact>
     <About /> 
     </Route>
-    
 
     <Route path="/allmembers" exact>
-    <AllMembers />
+    <MembersList  />
     </Route>
 
    </Switch>
