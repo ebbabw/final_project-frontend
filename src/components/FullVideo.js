@@ -9,7 +9,7 @@ import { LogoHome } from '../lib/Logos'
 export const FullVideo = props => {
 
    return (
-    <div>
+    <PageContainer>
 
       <Texture></Texture>
      
@@ -35,16 +35,25 @@ export const FullVideo = props => {
 
       </VideoContiner>
 
-      </div>
+      </PageContainer>
    );
  };
 
 
+ const PageContainer = styled.div`
+
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  
+    
+`;
+ 
 
  const Texture = styled.img`
 
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   top 0;
   left: 0;
@@ -55,36 +64,35 @@ export const FullVideo = props => {
 
  const VideoContiner = styled.div`
   
-   width: 100%;
-   height: 100vh;
-   background-color: black;
-   display: flex;
-   align-items: center;
-   justify-content: center;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: red;
 
     &::after {
-    width: 100%;
-    height 100vh;
-    content:'';
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.3); 
-    background-size: cover;
+      width: 100%;
+      height 100vh;
+      content:'';
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.2); 
+      background-size: cover;
    }
 `;
 
 const Video = styled.video`
-
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0:
-  left: 0:
-  z-index: 5;
-  object-fit: cover;
-  
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
 `;
 
 const CaptionContiner = styled.div`

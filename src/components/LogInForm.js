@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components/macro'
 
 
-import { Form, FromWrapper, FromHeader, FromInput} from '../lib/Form'
+import { InputWrapper, FromHeader, FromInput} from '../lib/Form'
+
+import { Button } from '../lib/Button'
 
 export const LogInForm = () => {
   
@@ -49,11 +52,12 @@ export const LogInForm = () => {
 
       <article>
   
-        <Form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
        
-        <FromWrapper>
         <FromHeader>Sign in</FromHeader>
   
+
+       <InputWrapper>
         <FromInput
         type="email"
         placeholder="Email"
@@ -73,11 +77,13 @@ export const LogInForm = () => {
         >
         </FromInput>
   
-        <FromInput type="submit" value="Sign in" onClick={handleSubmit}></FromInput>
+        <OutlinedButton type="submit" value="Sign in" onClick={handleSubmit}>Sign in</OutlinedButton>
         {error && <p>{error}</p>}
-        </FromWrapper>
         
-        </Form>
+        </InputWrapper>
+
+        
+        </form>
    
       
   
@@ -86,3 +92,15 @@ export const LogInForm = () => {
   )
   }
   
+  const OutlinedButton = styled(Button)`
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 200px;
+  color: black;
+  border-radius: 25px;
+  background: ${props => props.background || "lightblue"};
+
+  &:hover {
+    background: ${props => props.background || "lightgray"};
+  }
+`;

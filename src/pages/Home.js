@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 //components
 import { FullVideo } from '../components/Fullvideo'
 
@@ -27,4 +26,3 @@ export const Home = () => {
 
     )
 }
-

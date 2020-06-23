@@ -51,6 +51,10 @@ export const Header = () => {
                <StyledLink to="/allmembers">Our members</StyledLink>
                </Li>
 
+               <Li>
+               <StyledLink to="/memberform">Log in</StyledLink>
+               </Li>
+
               <Li>
               <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
               <span>{totalPrice}:-</span>
@@ -69,28 +73,9 @@ export const Header = () => {
 }
 
 
-
-const LogoWrapper = styled.div`
-
-    display: flex;
-    margin-left: 10%;
-
-`;
-
-const LogoWrapperMenu = styled.div`
-
- display: none;
-
-@media (max-width: 768px) {
-  display: flex;
-
-
-}
-
-`
-
 export const HeaderContainer = styled.div`
-  width: 100%;
+  
+width: 100%;
   height: 75px;
   position: fixed;
   background-color: black;
@@ -108,6 +93,28 @@ export const Headerwrapper = styled.div`
   width: 100%;
   justify-content: center;
 `;
+
+
+
+
+const LogoWrapper = styled.div`
+
+    display: flex;
+    margin-left: 10%;
+
+`;
+
+const LogoWrapperMenu = styled.div`
+
+ display: none;
+
+ @media (max-width: 768px) {
+  display: flex;
+
+
+}
+
+`
 
 const Li = styled.div`
     display: inline-block;

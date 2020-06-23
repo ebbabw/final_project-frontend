@@ -1,6 +1,9 @@
 import React, { useState  } from 'react'
+import styled from 'styled-components/macro'
 
-import { Form, FromWrapper, FromHeader, FromInput} from '../lib/Form'
+import { InputWrapper, FromHeader, FromInput} from '../lib/Form'
+
+import { Button } from '../lib/Button'
 
 export const SignUpForm = () => {
 
@@ -51,11 +54,12 @@ export const SignUpForm = () => {
 
           <div>
 
-            <Form onSubmit={handleSubmit}>
-            <FromWrapper>
+            <form onSubmit={handleSubmit}>
             
             <FromHeader>Become a member</FromHeader>
             
+    
+            <InputWrapper>
             <FromInput
             type="text"
             placeholder="Name"
@@ -87,14 +91,29 @@ export const SignUpForm = () => {
   
             </FromInput>
 
-            <FromInput type="submit" value="Sign up" onClick={handleSubmit}></FromInput>
+            <OutlinedButton type="submit" value="Sign up" onClick={handleSubmit}>Sign up</OutlinedButton>
             {error && <p>{error}</p>}
-            
-            </FromWrapper>
 
-            </Form>
+            </InputWrapper>
+
+
+            </form>
   
     
           </div>
   )}
   
+
+
+  const OutlinedButton = styled(Button)`
+  margin-top: 30px;
+  margin-left: 20px;
+  width: 200px;
+  color: black;
+  border-radius: 25px;
+  background: ${props => props.background || "lightblue"};
+
+  &:hover {
+    background: ${props => props.background || "lightgray"};
+  }
+`;

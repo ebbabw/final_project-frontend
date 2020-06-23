@@ -42,12 +42,13 @@ export const LoadingSpinner = () => {
     
 
 const LoadingIcon = styled.div`
-display: flex;
-width: 100%;
-justify-content: center;
-position: absolute;
-padding: 1em;
-z-index: 60;
+
+  display: flex;
+  width: 100%;
+  position: absolute;
+  padding: 1em;
+  z-index: 60;
+  background-color: red;
 `
 
 

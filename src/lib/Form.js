@@ -1,52 +1,41 @@
 import styled from 'styled-components/macro'
 
 
-export const Form = styled.div`
+export const FromHeader = styled.header`
 
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-border-radius: 2%;
-// background-image: url('./Images/water.jpg');
-background-color: blue;
-// background-size: cover;
-width: 100%;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  `;
 
-`;
+export const InputWrapper = styled.div`
+   
+    margin-left: 60px;
 
-export const FromWrapper = styled.div`
-
-
-background-color: lightblue;
-width: 80%;
-height: 500px;
-
-
-`;
-
-export const FromHeader = styled.form`
-
-margin-top: 10px;
-padding-bottom: 10px;
-font-size: 20px;
-color: white;
 `;
 
 export const FromInput = styled.input`
 
-margin-top: 10px;
-width: 80%;
-font-size: 15px;
-Border: none;
-border-radius: 25px;
-padding: 20px;
-height: 3px;
-color: black;
+  margin-top: 30px;
+  width: 200px;
+  font-size: 15px;
+  Border: none;
+  border-radius: 25px;
+  background-color: rgb(255, 255, 255, 0.2);
+  padding: 20px;
+  height: 3px;
+  color: black;
+  -webkit-box-shadow: 0px 9px 5px -4px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 9px 5px -4px rgba(0,0,0,0.75);
+  box-shadow: 0px 9px 5px -4px rgba(0,0,0,0.75);
 
-&::placeholder {
-  font-style: italic;
-  font-size: 11px;
+  &::placeholder {
+   font-style: italic;
+   font-size: 12px;
+   color: black;
 }
+
 
 `;

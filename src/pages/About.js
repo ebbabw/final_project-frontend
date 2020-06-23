@@ -20,7 +20,7 @@ export const About = () => {
 
     return (
         
-        <div>
+        <PageContainer>
 
             < Header /> 
             
@@ -35,11 +35,18 @@ export const About = () => {
             ))}
             </FactsContainer>
 
-        </div>
+        </PageContainer>
     
         )
     }
-    
+
+  const PageContainer = styled.div`
+  
+    width: 100%;
+    height: 600px;
+   
+  `;
+  
 
 
  const FactsContainer = styled.div`

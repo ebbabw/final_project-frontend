@@ -10,9 +10,13 @@ import { Header } from '../lib/Header'
 export const MemberForm = () => {
 
 return (
+
+  <div>
+    
+    <Header /> 
     
     <FormContainer>
-        <Header /> 
+
 
         <FormBox>
         <SignUpForm />
@@ -21,13 +25,13 @@ return (
         <FormBox>
         <LogInForm />
         </FormBox>
-
+    
     </FormContainer>
+
+    </div>
 
     )
 }
-
-
 
 const FormContainer = styled.div`
   
@@ -35,20 +39,19 @@ const FormContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  justify-content: center;
   margin-top: 100px;
-  background-color: green;
+  justify-content: center;
 
 `;
 
 
 const FormBox = styled.div`
 
-  width: 400px;
-  height: 600px;
+  border-radius: 3%;
+  background-image: url('/assets/water.jpg');
+  background-size: cover;
   margin: 20px;
-
-  background-color: red;
-  
+  width: 350px;
+  height: 500px;
 
 `;
