@@ -85,8 +85,8 @@ const Img = styled.img`
  const FactsContainer = styled.div`
   
   display: flex;
+  margin-top: 50px;
   width: 100%;
-  height: 400px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -102,7 +102,6 @@ const FactsBox = styled.div`
   margin-top: 40px;
   margin-left: 40px;
   width: 50%;
-  background-color: green;
 
 `;
 

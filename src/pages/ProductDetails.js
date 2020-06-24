@@ -43,7 +43,7 @@ export const ProductDetails = () => {
 
         <div>
         <Link to="/donate">
-        <Button>back to shop</Button>
+        <OutlinedButton>back to shop</OutlinedButton>
         </Link>
         </div>
 
@@ -67,4 +67,17 @@ export const ProductDetails = () => {
   margin-top: 100px;
   
 `;
+
+const OutlinedButton = styled(Button)`
+  width: 200px;
+  color: black;
+  background: ${props => props.background || "white"};
+  border: 2px solid black;
+
+  &:hover {
+    background: ${props => props.background || "lightblue"};
+  }
+`;
+
+
 
