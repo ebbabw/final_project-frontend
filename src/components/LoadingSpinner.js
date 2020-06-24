@@ -50,7 +50,7 @@ const LoadingContainer = styled.div`
   // display: flex;
   // align-items: flex-start;
   // justify-content: center;
-  width: 100%;
+  // width: 100%;
   // position: absolute;
   z-index: 60;
 

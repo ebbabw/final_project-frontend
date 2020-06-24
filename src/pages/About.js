@@ -19,32 +19,47 @@ export const About = () => {
 }, [])
 
     return (
+
+      <div>
+
+        < Header /> 
         
         <PageContainer>
-
-            < Header /> 
             
             <FactsContainer>
             {info.map((info) => (
-            
+          
+          <div>
             <FactsBox>
-            <p>{info.name}</p>
-            <p>{info.info}</p>
+            <HeaderInfo>{info.name1}</HeaderInfo>
+            <TextInfo>{info.info1}</TextInfo>
             </FactsBox>
 
+           <FactsBox>
+           <HeaderInfo>{info.name2}</HeaderInfo>
+           <TextInfo>{info.info2}</TextInfo>
+           </FactsBox>
+
+          </div>
             ))}
             </FactsContainer>
 
         </PageContainer>
     
+        </div>
         )
     }
 
   const PageContainer = styled.div`
   
-    width: 100%;
-    height: 600px;
-    background-color: black;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: url('/assets/oceanturtle.jpg') no-repeat center;
+   background-size: cover;
+
    
   `;
   
@@ -56,16 +71,34 @@ export const About = () => {
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 400px;
  
 `;
 
 
 const FactsBox = styled.div`
   
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
 
 `;
+
+const HeaderInfo = styled.h2`
+  
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  
+
+`;
+
+const TextInfo = styled.h2`
+  
+  font-size: 20px;
+  color: white;
+  
+
+`;
+
 
 
