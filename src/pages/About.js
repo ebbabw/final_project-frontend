@@ -20,66 +20,89 @@ export const About = () => {
 
     return (
 
-      <div>
+
+        <PageContainer>
+
+        <Img src='/assets/oceanturtle.jpg' alt='turtle' no-repeat center></Img>
+
 
         < Header /> 
-        
-        <PageContainer>
             
             <FactsContainer>
             {info.map((info) => (
           
           <div>
-            <FactsBox>
-            <HeaderInfo>{info.name1}</HeaderInfo>
-            <TextInfo>{info.info1}</TextInfo>
-            </FactsBox>
+
+            
+           <FactsBox>
+           <HeaderInfo>{info.name1}</HeaderInfo>
+           <TextInfo>{info.info1}</TextInfo>
+           </FactsBox>
 
            <FactsBox>
            <HeaderInfo>{info.name2}</HeaderInfo>
            <TextInfo>{info.info2}</TextInfo>
            </FactsBox>
 
+
+           <FactsBox>
+           <HeaderInfo>{info.name3}</HeaderInfo>
+           <TextInfo>{info.info3}</TextInfo>
+           </FactsBox>
+           
+    
+
           </div>
             ))}
             </FactsContainer>
 
         </PageContainer>
-    
-        </div>
+
         )
     }
 
   const PageContainer = styled.div`
   
-   width: 100%;
-   height: 100vh;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   background: url('/assets/oceanturtle.jpg') no-repeat center;
-   background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-   
   `;
+
+
+const Img = styled.img`
+    
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+`;
   
 
  const FactsContainer = styled.div`
   
   display: flex;
+  width: 100%;
+  height: 400px;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 100%;
   justify-content: center;
-  margin-top: 400px;
+  position: relative;
+  z-index: 44;
  
 `;
 
 
 const FactsBox = styled.div`
-  
-  width: 500px;
-  height: 500px;
+
+
+  margin-top: 40px;
+  margin-left: 40px;
+  width: 50%;
+  background-color: green;
 
 `;
 
