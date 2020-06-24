@@ -25,11 +25,13 @@ export const CartItem = ({ product })=> {
 
             <TextButton type="button" onClick={() => dispatch(cart.actions.addItem(product))}>+</TextButton>
             <TextButton type="button" onClick={() => dispatch(cart.actions.removeItem(product))}>-</TextButton>
+
             
             </ItemBox>
             </ItemContainer>
 
         </div>
+
 
     )
 }
@@ -78,3 +80,5 @@ export const TextButton = styled(Button)`
    background: ${props => props.background || "lightblue"};
   }
 `;
+
+
