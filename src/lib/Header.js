@@ -75,7 +75,7 @@ export const Header = () => {
 
 export const HeaderContainer = styled.div`
   
-width: 100%;
+  width: 100%;
   height: 75px;
   position: fixed;
   background-color: black;

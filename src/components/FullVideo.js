@@ -9,9 +9,7 @@ import { LogoHome } from '../lib/Logos'
 export const FullVideo = props => {
 
    return (
-    <PageContainer>
-
-      <Texture></Texture>
+    <div>
      
       <VideoContiner>
       
@@ -35,30 +33,10 @@ export const FullVideo = props => {
 
       </VideoContiner>
 
-      </PageContainer>
+      </div>
    );
  };
 
-
- const PageContainer = styled.div`
-
-  width: 100%;
-  height: 100%;
-  
-`;
- 
-
- const Texture = styled.img`
-
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  top 0;
-  left: 0;
-  z-index: 15;
-  background-image: url('/assets/texture.png');
-    
-`;
 
  const VideoContiner = styled.div`
   
@@ -67,7 +45,6 @@ export const FullVideo = props => {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: red;
 
     &::after {
       width: 100%;
@@ -77,7 +54,7 @@ export const FullVideo = props => {
       z-index: 10;
       top: 0;
       left: 0;
-      background: rgba(0, 0, 0, 0.2); 
+      background: rgba(0, 0, 0, 0.4); 
       background-size: cover;
    }
 `;
@@ -85,8 +62,6 @@ export const FullVideo = props => {
 const Video = styled.video`
     
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;

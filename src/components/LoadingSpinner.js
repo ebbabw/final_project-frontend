@@ -21,7 +21,9 @@ export const LoadingSpinner = () => {
     return (
 
       <>
-       <LoadingIcon> 
+       <LoadingContainer> 
+        
+        <LoadingIcon>
         {isLoading && (
         <div>
         <Lottie 
@@ -29,10 +31,12 @@ export const LoadingSpinner = () => {
         height={400} 
         width={400}
         />
-         <p>Loading products....</p>
+         <p>Loading...</p>
         </div>
        )}
+
        </LoadingIcon>
+       </LoadingContainer>
 
     </>
 
@@ -41,14 +45,30 @@ export const LoadingSpinner = () => {
 
     
 
+const LoadingContainer = styled.div`
+
+  // display: flex;
+  // align-items: flex-start;
+  // justify-content: center;
+  width: 100%;
+  // position: absolute;
+  z-index: 60;
+
+  position: fixed;
+  top:  20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
 const LoadingIcon = styled.div`
 
-  display: flex;
-  width: 100%;
-  position: absolute;
-  padding: 1em;
-  z-index: 60;
+  width: 40px;
+  height: 40px;
+
 `
+
+
+
+
 
 
 

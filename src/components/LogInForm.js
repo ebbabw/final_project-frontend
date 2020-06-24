@@ -19,7 +19,6 @@ export const LogInForm = () => {
     const handleSubmit = event => {
     event.preventDefault()
     
-    
     fetch("https://ebba-final-project.herokuapp.com/sessions",
       {
         method: 'POST',
