@@ -48,7 +48,6 @@ export const App = () => {
 
     <Route path="/" exact>
     <Home />
-    <LoadingSpinner />
     </Route>
 
     <Route path="/donate" exact>
@@ -58,32 +57,26 @@ export const App = () => {
 
     <Route path="/shoppingcart" exact>
     <Cart />
-    <LoadingSpinner />
     </Route>
 
     <Route path="/product/:_id" exact>
     <ProductDetails/> 
-    <LoadingSpinner />
     </Route>
 
     <Route path="/memberform" exact>
     <MemberForm />
-    <LoadingSpinner />
     </Route>
 
     <Route path="/profilepage" exact>
     <ProfilePage /> 
-    <LoadingSpinner />
     </Route>
 
     <Route path="/whatwedo" exact>
     <About /> 
-    <LoadingSpinner />
     </Route>
 
     <Route path="/allmembers" exact>
     <AllMembers />
-    <LoadingSpinner />
     </Route>
 
    </Switch>
