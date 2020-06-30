@@ -19,105 +19,107 @@ export const About = () => {
 }, [])
 
     return (
+      <div>
 
-
-        <PageContainer>
-
-        <Img src='/assets/oceanturtle.jpg' alt='turtle' no-repeat center></Img>
-
-
-        < Header /> 
+      <Header /> 
             
-            <FactsContainer>
+      <CompanyHeader>What we do</CompanyHeader>
+
+      <FactsContainer>
+ 
             {info.map((info) => (
-          
-          <div>
+              <div>
 
-            
-           <FactsBox>
-           <HeaderInfo>{info.name1}</HeaderInfo>
-           <TextInfo>{info.info1}</TextInfo>
-           </FactsBox>
-
-           <FactsBox>
-           <HeaderInfo>{info.name2}</HeaderInfo>
-           <TextInfo>{info.info2}</TextInfo>
-           </FactsBox>
-
-
-           <FactsBox>
-           <HeaderInfo>{info.name3}</HeaderInfo>
-           <TextInfo>{info.info3}</TextInfo>
-           </FactsBox>
-           
-    
+           <ItemBox>
+           <ItemText>{info.name}</ItemText>
+           <Img src={info.image} alt={info.name}></Img>
+           <TextBox>
+           <TextInfo>{info.info}</TextInfo>
+           </TextBox>
+           </ItemBox>
 
           </div>
             ))}
-            </FactsContainer>
+          </FactsContainer>
 
-        </PageContainer>
+      </div>
 
         )
     }
 
-  const PageContainer = styled.div`
-  
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
+  const CompanyHeader = styled.h2`
+  
+    margin-top: 100px;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    
   `;
+  
+  
+  
+const FactsContainer = styled.div`
+  
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+ 
+ `;
+ 
+const ItemBox = styled.div`
+  
+  width: 400px;
+  height: 800px;
+  margin: 20px;
+
+`;
+
+const ItemText = styled.p`
+  
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  
+`;
 
 
 const Img = styled.img`
-    
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+
+  width: 400px;
+  height: 400px;
+
+  box-shadow: 
+  0 1px 2px rgba(0,0,0,0.07), 
+  0 2px 4px rgba(0,0,0,0.07), 
+  0 4px 8px rgba(0,0,0,0.07), 
+  0 8px 16px rgba(0,0,0,0.07),
+  0 16px 32px rgba(0,0,0,0.07), 
+  0 32px 64px rgba(0,0,0,0.07);
+  
+  margin: 5px;
   object-position: center center;
-`;
-  
-
- const FactsContainer = styled.div`
-  
-  display: flex;
-  margin-top: 50px;
-  width: 100%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  position: relative;
-  z-index: 44;
- 
+  obejct-fit: cover;
 `;
 
 
-const FactsBox = styled.div`
-
-
-  margin-top: 40px;
-  margin-left: 40px;
-  width: 50%;
+const TextBox = styled.div`
+  
+  width: 400px;
+  margin: 5px;
 
 `;
 
-const HeaderInfo = styled.h2`
-  
-  font-size: 20px;
-  text-transform: uppercase;
-  color: white;
-  
-
-`;
 
 const TextInfo = styled.h2`
   
   font-size: 20px;
-  color: white;
+  color: black;
   
 
 `;

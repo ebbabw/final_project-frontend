@@ -1,13 +1,17 @@
 
 import React, { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
 
 import { Header } from '../lib/Header'
 import { Button } from '../lib/Button'
 
+import { cart } from '../reducers/cart'
+
 
 export const ProductDetails = () => {
+  const dispatch = useDispatch()
 
     const [ product, setProduct ] = useState()
     const { _id } = useParams()
@@ -26,58 +30,122 @@ export const ProductDetails = () => {
     
     return (
 
-        <ProductContainer>
+      <div>
 
         <Header />
+
+        <ButtonContainer>
+        <ButtonWrapper>
+
+        <Link to="/donate">
+        <OutlinedButton>back to shop</OutlinedButton>
+        </Link>
+
+        <OutlinedButton
+              type="button"
+              onClick={() => dispatch(cart.actions.addItem(product))}>
+              Add to cart
+        </OutlinedButton>
+
+                
+        </ButtonWrapper>
+        </ButtonContainer>
+
+        <ProductContainer>
 
         {product && (
 
             <div>
 
-            <h1>{product.name}</h1>
+            <DetailContainer>
+            <Title>{product.name} {product.price}$</Title>
+            <Img src={product.image} alt={product.name}></Img>
             <p>{product.description}</p>
+            </DetailContainer>
 
             </div>
             
         )}
 
-        <div>
-        <Link to="/donate">
-        <OutlinedButton>back to shop</OutlinedButton>
-        </Link>
-        </div>
-
-
         </ProductContainer>
 
-
-
-    
-
+        </div>
     )
 
 
  }
 
- const ProductContainer = styled.div`
+ const ButtonContainer = styled.div`
+  
+  margin-top: 100px;
+  width: 100%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  
+`;
+
+const ButtonWrapper = styled.div`
   
   display: flex;
+  width: 50%;
+  justify-content: space-between;
+  border-bottom: solid black 1px;
+  padding: 10px;
+
+`;
+
+
+const OutlinedButton = styled(Button)`
+width: 200px;
+color: black;
+background: ${props => props.background || "lightblue"};
+border: 2px solid black;
+
+&:hover {
+  background: ${props => props.background || "white"};
+}
+`;
+
+
+const ProductContainer = styled.div`
+  
+  display: flex;
+  flex-direction: row;
   width: 100%;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 5px;
   
 `;
 
-const OutlinedButton = styled(Button)`
-  width: 200px;
-  color: black;
-  background: ${props => props.background || "white"};
-  border: 2px solid black;
+const DetailContainer = styled.div`
+  
+  width: 500px;
+  width: 100%;
 
-  &:hover {
-    background: ${props => props.background || "lightblue"};
-  }
 `;
+
+
+const Title = styled.h1`
+
+  font-size: 40px;
+  color: black;
+
+
+`;
+
+const Img = styled.img`
+  
+  width: 500px;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 7px 7px;
+  background-color: rgba(235, 227, 227, 0.468);
+  border: 1px solid black;
+
+`;
+
+
 
 
 

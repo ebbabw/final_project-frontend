@@ -45,12 +45,13 @@ export const AllMembers = () => {
 
 const HeaderMembers = styled.h1`
   
-    margin-top: 100px;
-    text-align: center;
+  margin-top: 100px;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
 
   `;
-
-
 const MembersContainer = styled.div`
   
   display: flex;

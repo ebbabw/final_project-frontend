@@ -29,6 +29,7 @@ export const Products = () => {
 
         <Header />
 
+        <DoanteHeader>Web shop</DoanteHeader>
 
         <ShopContainer>
         <ShopWapper>
@@ -50,6 +51,17 @@ export const Products = () => {
     )
 
 }
+
+const DoanteHeader = styled.h2`
+  
+ margin-top: 100px;
+ font-size: 50px;
+ text-transform: uppercase;
+ color: black;
+ text-align: center;
+
+`;
+
 
 const ShopContainer = styled.div`
   
