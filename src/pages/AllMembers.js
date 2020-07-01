@@ -29,8 +29,9 @@ export const AllMembers = () => {
             <HeaderMembers>Our amazing members</HeaderMembers>
 
             <MembersContainer>
+
             {member.map((info) => (
-            
+       
             <Memberbox>
             <p>{info.name}</p>
             </Memberbox>
@@ -52,27 +53,29 @@ const HeaderMembers = styled.h1`
   text-align: center;
 
   `;
-  
+
 const MembersContainer = styled.div`
   
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width 100%;
-  height: 300px;
-  margin-top: 50px;
   justify-content: center;
+  width: 100%;
+  margin-top: 20px;
 
 `;
 
+
 const Memberbox = styled.div`
 
-   width: 80px;
-   height: 80px;
+   width: 200px;
+   height: 100px;
    color: white;
    background-color: black;
    font-size: 20px;
-   margin-left: 10px;
    text-align: center;
+   margin: 10px;
+
+
 
 `

@@ -43,6 +43,15 @@ const ItemContainer = styled.div`
     justify-content: center;
     width: 100%;
 
+
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+  
+
+  }
+
+
 `;
 
 const ItemBox = styled.div`

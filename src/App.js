@@ -14,7 +14,7 @@ import { ui } from './reducers/ui'
 //pages 
 import { Home } from './pages/Home'
 import { MemberForm } from './pages/MemberForm'
-import { ProfilePage } from './pages/ProfilePage'
+import { CommunityPage } from './pages/CommunityPage'
 import { About } from './pages/About'
 import { ProductDetails } from 'pages/ProductDetails'
 import { Cart } from './pages/Cart'
@@ -68,7 +68,7 @@ export const App = () => {
     </Route>
 
     <Route path="/profilepage" exact>
-    <ProfilePage /> 
+    <CommunityPage /> 
     </Route>
 
     <Route path="/whatwedo" exact>

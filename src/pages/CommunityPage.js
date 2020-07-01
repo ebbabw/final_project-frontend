@@ -8,7 +8,7 @@ import animationData from '../lotties/community';
 import { Button } from '../lib/Button'
 
 
- export const ProfilePage = () => {
+ export const CommunityPage = () => {
 
     const defaultOptions = {
         loop: true,
@@ -98,6 +98,9 @@ const HeaderLoggedIn = styled.h1`
   text-transform: uppercase;
   color: black;
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 30px;
 
   `;
 

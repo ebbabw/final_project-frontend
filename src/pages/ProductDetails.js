@@ -82,6 +82,15 @@ export const ProductDetails = () => {
   display: flex;
   align-self: center;
   justify-content: center;
+
+
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+  
+
+  }
+
   
 `;
 
@@ -92,6 +101,14 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
   border-bottom: solid black 1px;
   padding: 10px;
+
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+
+  }
 
 `;
 
@@ -112,10 +129,20 @@ const ProductContainer = styled.div`
   
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
   justify-content: center;
   margin-top: 5px;
-  
+
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    margin-left: 10px;
+
+  }
+
 `;
 
 const DetailContainer = styled.div`
@@ -142,6 +169,14 @@ const Img = styled.img`
   box-shadow: 7px 7px;
   background-color: rgba(235, 227, 227, 0.468);
   border: 1px solid black;
+
+  @media (max-width: 768px) {
+    
+    background-color: red;
+    width: 300px;
+
+  }
+
 
 `;
 

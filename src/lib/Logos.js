@@ -19,12 +19,15 @@ export const Logo = styled.img`
 export const Logomenu = styled.img`
   
   @media (max-width: 768px) {
-
+    
     width: 40px;
     height: 40px;
-    margin-right: 255px;
+    margin-right: 250px;
     margin-top: 15px;
+    
+
   }
+
 
   `;
 

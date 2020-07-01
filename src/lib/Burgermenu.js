@@ -97,8 +97,10 @@ const LogoWrapperMenu = styled.div`
     display: none;
 
     @media (max-width: 768px) {
-      display:flex;
+      display: flex;
+      width: 100%;
       justify-content: flex-start;
+
   }
 
 `;
