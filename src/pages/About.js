@@ -23,21 +23,38 @@ export const About = () => {
 
       <Header /> 
 
-      <FactsContainer>
       <CompanyHeader>What we do</CompanyHeader>
- 
+
+      <FactsContainer>
+
             {info.map((info) => (
-              <div>
 
            <ItemBox>
+           <HoverEffect>
+           <InnerFlipedCard>
+
+           <FlipcardFrontandBack>
+           <FlipcardFront>
+
            <ItemText>{info.name}</ItemText>
            <Img src={info.image} alt={info.name}></Img>
-           <TextBox>
+
+           </FlipcardFront>
+           </FlipcardFrontandBack>
+
+           <FlipcardFrontandBack>
+           <FlipcardBack>
+           
            <TextInfo>{info.info}</TextInfo>
-           </TextBox>
+
+           </FlipcardBack>
+           </FlipcardFrontandBack>
+           
+           
+           </InnerFlipedCard>
+           </HoverEffect>
            </ItemBox>
 
-          </div>
             ))}
           </FactsContainer>
 
@@ -46,100 +63,146 @@ export const About = () => {
         )
     }
 
-
-  const CompanyHeader = styled.h2`
+    const CompanyHeader = styled.h2`
   
     margin-top: 100px;
     font-size: 50px;
     text-transform: uppercase;
     color: black;
     text-align: center;
-
+   
     @media (max-width: 768px) {
-
+   
       font-size: 30px;
-
+   
     }
-  
+   
     
-  `;
-  
-  
+   `;
+   
   
 const FactsContainer = styled.div`
   
   display: flex;
   justify-content: center;
+
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
 
+
   @media (max-width: 768px) {
 
-    font-size: 30px;
-    width: 100%;
+    background-color: black;
+    flex-direction: row;
 
   }
  
  `;
- 
-const ItemBox = styled.div`
+
+ const InnerFlipedCard = styled.div`
   
+  position: relative;
+
   width: 400px;
-  height: 800px;
-  margin: 20px;
+  height: 400px;
 
   @media (max-width: 768px) {
-
-    width: 100%;
-    height: 800px;
-
+    width: 350px;
+    height: 250px;
   }
+ 
+`;
+
+
+const FlipcardFrontandBack = styled.div`
+  
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+
+`;
+
+const Img = styled.img`
+  
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
 
 `;
 
 const ItemText = styled.p`
   
-  text-transform: uppercase;
-  color: black;
+  z-index: 50;
   text-align: center;
-  font-size: 20px;
-  font-weight: 700;
+  top: 40%;
+  left: 40%;
+  position: absolute;
+  font-size: 50px;
+  text-transform: uppercase;
 
 `;
 
 
-const Img = styled.img`
+const FlipcardFront = styled.div`
+  
+  background-color: black;
+  color: white;
+   
+  width: 100%;
+  height: 100%;
 
+`;
+
+const FlipcardBack = styled.div`
+  
+  position: relative; 
+  transform: rotateY(180deg);
+  background-color: black;
+  color: white;
+  display: none;
+  
+  width: 100%;
+  height: 100%;
+
+
+`;
+
+const HoverEffect = styled.div`
+ 
+&:hover {
+  transform: rotateY(180deg);
+
+${FlipcardFront} {
+  display: none;
+}
+
+${FlipcardBack} {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+ 
+}
+
+`;
+ 
+const ItemBox = styled.div`
+  
   width: 400px;
   height: 400px;
-
-  box-shadow: 
-  0 1px 2px rgba(0,0,0,0.07), 
-  0 2px 4px rgba(0,0,0,0.07), 
-  0 4px 8px rgba(0,0,0,0.07), 
-  0 8px 16px rgba(0,0,0,0.07),
-  0 16px 32px rgba(0,0,0,0.07), 
-  0 32px 64px rgba(0,0,0,0.07);
-  
-  margin: 5px;
-  object-position: center center;
-  obejct-fit: cover;
-`;
-
-
-const TextBox = styled.div`
-  
-  width: 400px;
-  margin: 5px;
+  margin: 20px;
 
 `;
-
 
 const TextInfo = styled.h2`
   
-  font-size: 20px;
   color: black;
+  color: white;
+  font-size: 20px;
+  margin: 20px;
   
 
 `;
