@@ -23,14 +23,6 @@ export const Cart = () => {
     <HeaderContainer>
     <ShopHeader>Shopping cart</ShopHeader>
     </HeaderContainer>
-    
-
-
-    {/* {totalPrice.length === 0 && (
-      <p>No itmes in the cart</p>
-    )}  */}
-
-    {/* if totalprice === 0 retun text (no items in the cart and remove if price) */}
   
     
     <div>

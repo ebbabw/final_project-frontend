@@ -27,8 +27,8 @@ export const LoadingSpinner = () => {
         <div>
         <Lottie 
         options={defaultOptions} 
-        height={40} 
-        width={40}
+        height={300} 
+        width={300}
         />
         <p>Loading...</p>
         </div>

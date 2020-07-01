@@ -114,12 +114,13 @@ const ButtonWrapper = styled.div`
 
 
 const OutlinedButton = styled(Button)`
-width: 200px;
-color: black;
-background: ${props => props.background || "lightblue"};
-border: 2px solid black;
+  
+  width: 200px;
+  color: black;
+  background: ${props => props.background || "lightblue"};
+  border: 2px solid black;
 
-&:hover {
+  &:hover {
   background: ${props => props.background || "white"};
 }
 `;
