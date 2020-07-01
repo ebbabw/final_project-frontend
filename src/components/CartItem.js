@@ -47,6 +47,7 @@ const ItemContainer = styled.div`
   @media (max-width: 768px) {
     
     flex-direction: column;
+    width: 100%;
   
 
   }
@@ -60,6 +61,14 @@ const ItemBox = styled.div`
     margin: 10px;
     background-color: white;
     width: 70%;
+
+    @media (max-width: 768px) {
+    
+      flex-direction: row;
+      width: 90%;
+    
+  
+    }
 
 `;
 
