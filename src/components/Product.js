@@ -81,7 +81,7 @@ const ShopCard = styled.div`
   background-color: black;
 
   @media (max-width: 768px) {
-    width: 200px;
+    width: 400px;
     height: 350px;
   }
 
