@@ -22,10 +22,9 @@ export const About = () => {
       <div>
 
       <Header /> 
-            
-      <CompanyHeader>What we do</CompanyHeader>
 
       <FactsContainer>
+      <CompanyHeader>What we do</CompanyHeader>
  
             {info.map((info) => (
               <div>
@@ -55,6 +54,13 @@ export const About = () => {
     text-transform: uppercase;
     color: black;
     text-align: center;
+
+    @media (max-width: 768px) {
+
+      font-size: 30px;
+
+    }
+  
     
   `;
   
@@ -67,6 +73,13 @@ const FactsContainer = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+
+  @media (max-width: 768px) {
+
+    font-size: 30px;
+    width: 100%;
+
+  }
  
  `;
  
@@ -75,6 +88,13 @@ const ItemBox = styled.div`
   width: 400px;
   height: 800px;
   margin: 20px;
+
+  @media (max-width: 768px) {
+
+    width: 100%;
+    height: 800px;
+
+  }
 
 `;
 
@@ -85,7 +105,7 @@ const ItemText = styled.p`
   text-align: center;
   font-size: 20px;
   font-weight: 700;
-  
+
 `;
 
 

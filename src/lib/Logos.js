@@ -32,11 +32,18 @@ export const LogoHome = styled.img`
   
   width: 300px;
   height: 300px;
+
+
+  @media (max-width: 768px) {
+
+    display: none;
+  
+  }
 `;
 
 export const LogoCart = styled.img`
 
-  margin-right: 20px;
+  margin-right: 10px;
   width: 30px;
   height: 30px;
 

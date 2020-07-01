@@ -52,8 +52,10 @@ export const Burgermenu = () => {
                </Li>
 
               <Li>
+              <Price>
               <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
               <span>{totalPrice}:-</span>
+              </Price>
               </Li>
               </Headerwrapper>
               }
@@ -86,7 +88,6 @@ export const Headermenu = styled.div`
 
   background-color: black;
   margin-left: 20px;
-
 
 `;
 
@@ -128,6 +129,18 @@ const Li = styled.li`
   }
 
 `;
+
+
+
+const Price = styled.span`
+    
+@media (max-width: 768px) {
+    display: inline-block;
+    margin-right: 90px;
+  }
+
+`;
+
 
 const StyledLink = styled(Link)`
     text-decoration: none;

@@ -57,6 +57,7 @@ export const FullVideo = props => {
       background: rgba(0, 0, 0, 0.4); 
       background-size: cover;
    }
+
 `;
 
 const Video = styled.video`
@@ -77,6 +78,12 @@ const CaptionContiner = styled.div`
   text-transform: uppercase;
   font-size: 20px;
   @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+  @media (max-width: 768px) {
+
+    font-size: 15px;
+  
+  }
    
   
 `;

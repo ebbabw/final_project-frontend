@@ -56,8 +56,10 @@ export const Header = () => {
                </Li>
 
               <Li>
+              <Price>
               <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
               <span>{totalPrice}:-</span>
+              </Price>
               </Li>
               </Headerwrapper>
 
@@ -83,6 +85,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   top: 0;
   z-index: 1000;
+
 
 `;
 
@@ -118,15 +121,22 @@ const LogoWrapperMenu = styled.div`
 
 const Li = styled.div`
     display: inline-block;
-    margin-right: 80px;
-    font-size: 20px;
-    margin-top: 20px;
+    margin-right: 90px;
+    font-size: 15px;
+    margin-top: 25px;
 
     @media (max-width: 768px) {
       display: none;
     }
 `;
 
+
+const Price = styled.span`
+    
+    display: inline-block;
+    margin-right: 90px;
+
+`;
 
 const StyledLink = styled(Link)`
     text-decoration: none;

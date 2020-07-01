@@ -52,6 +52,7 @@ const HeaderMembers = styled.h1`
   text-align: center;
 
   `;
+  
 const MembersContainer = styled.div`
   
   display: flex;

@@ -80,6 +80,11 @@ const ShopCard = styled.div`
   padding: 25px;
   background-color: black;
 
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 350px;
+  }
+
 `;
 
 const InnerFlipedCard = styled.div`
@@ -89,6 +94,11 @@ const InnerFlipedCard = styled.div`
 
   width: 300px;
   height: 450px;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 250px;
+  }
  
 `;
 
@@ -153,6 +163,11 @@ const Img = styled.img`
   width: 300px;
   height: 300px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 200px;
+  }
 }
 `;
 

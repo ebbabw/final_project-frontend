@@ -29,9 +29,10 @@ export const Products = () => {
 
         <Header />
 
+        <ShopContainer>
+
         <DoanteHeader>Web shop</DoanteHeader>
 
-        <ShopContainer>
         <ShopWapper>
 
             {listProducts.map((product) => (
@@ -52,6 +53,16 @@ export const Products = () => {
 
 }
 
+
+const ShopContainer = styled.div`
+  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  
+`;
+
 const DoanteHeader = styled.h2`
   
  margin-top: 100px;
@@ -62,14 +73,6 @@ const DoanteHeader = styled.h2`
 
 `;
 
-
-const ShopContainer = styled.div`
-  
-  display: flex;
-  width: 100%;
-  margin-top: 100px;
-  
-`;
 
 const ShopWapper = styled.div`
   
