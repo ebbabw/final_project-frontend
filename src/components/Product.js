@@ -34,15 +34,27 @@ export const Product = ({ product }) => {
            <FlipcardFrontandBack>
               
            <FlipcardBack>
+
+            
             <Title>{product.name}</Title>
-           <ProductLink key={product._id} to={`/product/${product._id}`}>
+            <Img src={product.image} alt={product.name}/>
+
+            <ButtonWrapper>
+            <ProductLink key={product._id} to={`/product/${product._id}`}>
             <OutlinedButton>View more</OutlinedButton>
            </ProductLink>
+
             <OutlinedButton
               type="button"
               onClick={() => dispatch(cart.actions.addItem(product))}>
               Add to cart
             </OutlinedButton>
+            </ButtonWrapper>
+
+            <ActionContainer>
+            <Pricetitle>{product.price}$</Pricetitle>
+            </ActionContainer>
+
            </FlipcardBack>
 
            </FlipcardFrontandBack>
@@ -131,6 +143,8 @@ const FlipcardBack = styled.div`
 
 `;
 
+
+
 const HoverEffect = styled.div`
  
 &:hover {
@@ -163,12 +177,27 @@ const Img = styled.img`
   width: 300px;
   height: 300px;
   cursor: pointer;
+  position: relative; 
 
   @media (max-width: 768px) {
     width: 200px;
     height: 200px;
   }
 }
+`;
+
+
+const ButtonWrapper = styled.div`
+  
+  display: flex;
+  width: 100%;
+  height: 100%;
+  
+  position: absolute; 
+  left: 30px;
+  top: 290px; 
+
+
 `;
 
 

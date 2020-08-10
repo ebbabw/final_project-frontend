@@ -11,7 +11,7 @@ export const About = () => {
 
     useEffect(() => {
 
-    fetch('https://ebba-final-project.herokuapp.com/about')
+    fetch('https://ebba-final-project.herokuapp.com/facts')
     .then((res) => res.json())
     .then((json) => {
       setInfo(json)

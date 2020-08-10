@@ -15,17 +15,19 @@ export const Header = () => {
 
   const [showmenu, setShowmenu] = useState(false);
 
-  const totalPrice = useSelector((store) => (
-      store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
-  ))
 
+  const totalAmount = useSelector((store) => 
+  store.cart.items.map(qty => {
+    return qty.quantity;
+  })
+  .reduce((a, b) => {
+    return a + b;
+  }, 0))
 
   return (
 
 
       <HeaderContainer>   
-
-            <Headerwrapper>
 
             <LogoWrapperMenu>
               <Logomenu src='/assets/menulogo.png' onClick={() => {setShowmenu(!showmenu)}}></Logomenu>
@@ -34,6 +36,9 @@ export const Header = () => {
              <LogoWrapper>
               <Link to="/"><Logo src='/assets/logocwg.png'></Logo></Link>
               </LogoWrapper>
+
+            <Headerwrapper>
+              <Navwrapper>
 
                <Li>
                <StyledLink to="/">Home</StyledLink>
@@ -47,20 +52,13 @@ export const Header = () => {
                <StyledLink to="/whatwedo">What we do</StyledLink>
                </Li>
 
-               <Li>
-               <StyledLink to="/allmembers">Our members</StyledLink>
-               </Li>
-
-               <Li>
-               <StyledLink to="/memberform">Log in</StyledLink>
-               </Li>
-
               <Li>
-              <Price>
               <Link to="/shoppingcart"><LogoCart src='/assets/shopping-bag.png' alt="Cart"></LogoCart></Link>
-              <span>{totalPrice}:-</span>
-              </Price>
+              <AmountContainer>
+               <AmounttText>{totalAmount}</AmounttText>
+              </AmountContainer>
               </Li>
+              </Navwrapper>
               </Headerwrapper>
 
               {showmenu &&  <Burgermenu /> }
@@ -77,6 +75,7 @@ export const Header = () => {
 
 export const HeaderContainer = styled.div`
   
+  display: flex;
   width: 100%;
   height: 75px;
   position: fixed;
@@ -85,25 +84,25 @@ export const HeaderContainer = styled.div`
   align-items: center;
   top: 0;
   z-index: 1000;
-
-
+  position: absolute;
+ 
 `;
 
 export const Headerwrapper = styled.div`
   
   display: flex;
+  height: 75px;
   color: white;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-end;
+  position: relative;
 `;
-
-
 
 
 const LogoWrapper = styled.div`
 
-    display: flex;
-    margin-left: 10%;
+    display: block;
+    margin-left: 20px;
 
 `;
 
@@ -114,27 +113,46 @@ const LogoWrapperMenu = styled.div`
  @media (max-width: 768px) {
   display: flex;
 
-
 }
+
+`
+
+const Navwrapper = styled.div`
+
+  display: flex;
+  justify-content: flex-end; 
 
 `
 
 const Li = styled.div`
     display: inline-block;
-    margin-right: 90px;
+    width: 100px;
+    align-item: right;
+    margin-right: 10px;
     font-size: 15px;
-    margin-top: 25px;
+    margin-top: 30px;
 
     @media (max-width: 768px) {
       display: none;
     }
 `;
 
-
-const Price = styled.span`
+const AmountContainer = styled.div`
     
     display: inline-block;
-    margin-right: 90px;
+
+`;
+
+const AmounttText = styled.p`
+    
+    background-color: lightblue;
+    color: black;
+    width: 20px;
+    height: 20px;
+    padding: 2px;
+    border-radius: 25px;
+    text-align: center;
+    
 
 `;
 
@@ -145,4 +163,6 @@ const StyledLink = styled(Link)`
       background-color: lightblue;
     }
 `;
+
+
 

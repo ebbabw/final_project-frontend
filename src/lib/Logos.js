@@ -46,7 +46,6 @@ export const LogoHome = styled.img`
 
 export const LogoCart = styled.img`
 
-  margin-right: 10px;
   width: 30px;
   height: 30px;
 

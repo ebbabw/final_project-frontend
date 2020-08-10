@@ -3,18 +3,35 @@ import { useSelector } from 'react-redux'
 import { CartItem } from '../components/CartItem'
 import styled from 'styled-components/macro'
 import { Header } from '../lib/Header'
+import swal from 'sweetalert';
 
 import { Button } from '../lib/Button'
 
 export const Cart = () => {
 
+  const handleAlert = () => {
+    window.swal();
+    swal("Unfortunately, not a real store but if you want to donate please visit https://coralgardeners.org - This is a Technigo Bootcamp finalproject visit https://github.com/ebbabw/final_project-frontend and https://www.technigo.io/ to learn more.");
+  }
+
     const products = useSelector((store) => store.cart.items)
 
+
     const totalPrice = useSelector((store) => (
-        store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 0)
+        store.cart.items.reduce((total, item) => (total + (item.price * item.quantity)), 1)
     ))
 
-    return (
+
+    const totalAmount = useSelector((store) => 
+    store.cart.items.map(qty => {
+      return qty.quantity;
+    })
+    .reduce((a, b) => {
+      return a + b;
+    }, 0))
+
+
+  return (
 
     <div>
 
@@ -34,11 +51,12 @@ export const Cart = () => {
 
     <TotalContiner>
     <p>Total:<span>{totalPrice}:-</span></p>
+    <p>Amount:<span>{totalAmount}</span></p>
     </TotalContiner>
 
     <ButtonContiner>
 
-     <OutlinedButton>Go to checkout</OutlinedButton>
+     <OutlinedButton onClick={handleAlert}>Go to checkout</OutlinedButton>
 
    </ButtonContiner>
 

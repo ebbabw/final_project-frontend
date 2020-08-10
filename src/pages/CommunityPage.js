@@ -4,6 +4,8 @@ import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Lottie from 'lottie-react-web';
 import animationData from '../lotties/community';
+import swal from 'sweetalert';
+
 
 import { Button } from '../lib/Button'
 
@@ -28,6 +30,11 @@ import { Button } from '../lib/Button'
     history.push('/')
   }
 
+  const handleAlert = () => {
+    window.swal();
+    swal("This page is under rebuild");
+  }
+
   useEffect(() => {
     const accessToken = localStorage.getItem('accessToken')
 
@@ -49,7 +56,7 @@ import { Button } from '../lib/Button'
 
   if (localStorage.getItem('accessToken')) {
 
-  return (
+    return (
 
       <SecretSection>
 
@@ -69,7 +76,11 @@ import { Button } from '../lib/Button'
       <HeaderStart>Let's start the converation!</HeaderStart>
 
       <JoinContainer>
-      <OutlinedButton>Join now</OutlinedButton>
+
+  
+      <OutlinedButton onClick={handleAlert}>Join now</OutlinedButton>
+  
+
       </JoinContainer>
 
 

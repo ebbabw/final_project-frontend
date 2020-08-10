@@ -15,5 +15,6 @@ export const Button = styled.button`
     background: ${props => props.background || "#6200EE"};
     opacity: 90%;
     box-shadow: 0 8px 10px -6px black;
+    cursor: pointer;
   }
 `;
